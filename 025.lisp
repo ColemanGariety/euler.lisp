@@ -40,14 +40,14 @@
 ;;   (test-index 0))
 
 ;; best yet!
-;; ~0.009secs (~1 milliseconds)
+;; <0.00 msecs!
 (defun n-digit-fibonacci (n)
   (let ((cap (expt 10 (1- n))))
     (defun fibonacci (a b i)
-    (if (< b cap)
-        (fibonacci b (+ a b) (1+ i))
-        i))
-  (fibonacci 0 1 1)))
+      (if (< b cap)
+          (fibonacci b (+ a b) (1+ i))
+          i))
+    (fibonacci 0 1 1)))
 
 (print (time (n-digit-fibonacci 1000)))
 
